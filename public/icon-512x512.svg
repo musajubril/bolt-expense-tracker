@@ -1,0 +1,8 @@
+
+    <svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+      <rect width="512" height="512" fill="#000000" rx="64"/>
+      <circle cx="256" cy="204.8" r="102.4" fill="#ffffff"/>
+      <rect x="153.6" y="358.4" width="204.8" height="25.6" fill="#ffffff"/>
+      <text x="256" y="230.4" text-anchor="middle" fill="#000000" font-family="serif" font-size="64" font-weight="bold">$</text>
+    </svg>
+  

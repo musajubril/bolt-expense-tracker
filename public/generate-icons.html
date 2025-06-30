@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icon Generator</title>
+</head>
+<body>
+    <canvas id="canvas192" width="192" height="192"></canvas>
+    <canvas id="canvas512" width="512" height="512"></canvas>
+    
+    <script>
+        // Create 192x192 icon
+        const canvas192 = document.getElementById('canvas192');
+        const ctx192 = canvas192.getContext('2d');
+        
+        // Black rounded rectangle background
+        ctx192.fillStyle = '#000000';
+        ctx192.roundRect(0, 0, 192, 192, 24);
+        ctx192.fill();
+        
+        // White circle
+        ctx192.fillStyle = '#ffffff';
+        ctx192.beginPath();
+        ctx192.arc(96, 88, 40, 0, 2 * Math.PI);
+        ctx192.fill();
+        
+        // White rectangle
+        ctx192.fillRect(64, 136, 64, 8);
+        
+        // Dollar sign
+        ctx192.fillStyle = '#000000';
+        ctx192.font = 'bold 24px serif';
+        ctx192.textAlign = 'center';
+        ctx192.fillText('$', 96, 100);
+        
+        // Create 512x512 icon
+        const canvas512 = document.getElementById('canvas512');
+        const ctx512 = canvas512.getContext('2d');
+        
+        // Black rounded rectangle background
+        ctx512.fillStyle = '#000000';
+        ctx512.roundRect(0, 0, 512, 512, 64);
+        ctx512.fill();
+        
+        // White circle
+        ctx512.fillStyle = '#ffffff';
+        ctx512.beginPath();
+        ctx512.arc(256, 234, 106, 0, 2 * Math.PI);
+        ctx512.fill();
+        
+        // White rectangle
+        ctx512.fillRect(170, 362, 172, 22);
+        
+        // Dollar sign
+        ctx512.fillStyle = '#000000';
+        ctx512.font = 'bold 64px serif';
+        ctx512.textAlign = 'center';
+        ctx512.fillText('$', 256, 270);
+        
+        // Function to add rounded rectangle to canvas context
+        if (!CanvasRenderingContext2D.prototype.roundRect) {
+            CanvasRenderingContext2D.prototype.roundRect = function(x, y, width, height, radius) {
+                this.beginPath();
+                this.moveTo(x + radius, y);
+                this.lineTo(x + width - radius, y);
+                this.quadraticCurveTo(x + width, y, x + width, y + radius);
+                this.lineTo(x + width, y + height - radius);
+                this.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+                this.lineTo(x + radius, y + height);
+                this.quadraticCurveTo(x, y + height, x, y + height - radius);
+                this.lineTo(x, y + radius);
+                this.quadraticCurveTo(x, y, x + radius, y);
+                this.closePath();
+            };
+        }
+        
+        console.log('Icons generated! Right-click on each canvas to save as PNG');
+    </script>
+</body>
+</html>

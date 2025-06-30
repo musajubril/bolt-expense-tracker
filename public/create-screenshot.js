@@ -1,0 +1,19 @@
+const fs = require('fs');
+
+// Create a simple screenshot placeholder
+const screenshotSVG = `
+<svg width="390" height="844" xmlns="http://www.w3.org/2000/svg">
+  <rect width="390" height="844" fill="#f8f9fa"/>
+  <rect x="20" y="60" width="350" height="724" fill="#ffffff" rx="12" stroke="#e9ecef" stroke-width="2"/>
+  <text x="195" y="120" text-anchor="middle" fill="#495057" font-family="Arial" font-size="24" font-weight="bold">Vintage Expense Tracker</text>
+  <rect x="40" y="150" width="310" height="60" fill="#000000" rx="8"/>
+  <text x="195" y="185" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="16">Dashboard</text>
+  <rect x="40" y="230" width="150" height="100" fill="#f8f9fa" rx="8" stroke="#dee2e6"/>
+  <rect x="200" y="230" width="150" height="100" fill="#f8f9fa" rx="8" stroke="#dee2e6"/>
+  <rect x="40" y="350" width="310" height="120" fill="#f8f9fa" rx="8" stroke="#dee2e6"/>
+  <text x="195" y="800" text-anchor="middle" fill="#6c757d" font-family="Arial" font-size="12">Track expenses with elegance</text>
+</svg>
+`;
+
+fs.writeFileSync('screenshot-mobile.svg', screenshotSVG);
+console.log('Screenshot placeholder created!');
